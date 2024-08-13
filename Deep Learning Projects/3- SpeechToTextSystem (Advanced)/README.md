@@ -11,6 +11,7 @@ In this project, we developed an end-to-end ASR model specifically tailored for 
 - [⚙️ Installation](#%EF%B8%8F-installation)
 - [🚀 Usage](#-usage)
 - [📂 Files and Directories](#-files-and-directories)
+- [📄 Documentation](#-documentation)
 - [🤝 Contributing](#-contributing)
 - [📝 License](#-license)
 - [👤 Author](#-author)
@@ -81,6 +82,11 @@ To use the MTC-AIC system:
 - **`res/`**: Documentation images or PDFs.
 - **`requirements.txt`**: Dependency file.
 
+## 📄 Documentation
+
+For detailed documentation of the entire codebase, including explanations and usage, please refer to the PDF document available in the `res/` directory:  
+[Download Documentation PDF](./res/MTC-AIC2_D.pdf)
+
 ## 🤝 Contributing
 
 We welcome contributions to the MTC-AIC project! Please follow these steps to contribute:
@@ -96,6 +102,6 @@ This project is licensed under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Mohamed Atwan**  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/your-linkedin-url)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/mohamed-atwan-7aaa81223/)
 
 For any inquiries or further information, feel free to reach out via LinkedIn.
