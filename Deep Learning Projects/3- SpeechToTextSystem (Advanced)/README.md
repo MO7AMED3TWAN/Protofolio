@@ -4,7 +4,7 @@ Welcome to the **MTC-AIC** repository! This project is dedicated to developing a
 
 ## 📜 Project Overview
 
-In this project, we developed an end-to-end ASR model specifically tailored for Arabic, training it from scratch. The model was trained for nearly 20 days using a custom dataset comprising 50 recorded audio samples. Despite the challenges posed by the limited and noisy data, our objective was to achieve high accuracy in transcribing Arabic speech. This project documents the development process, challenges encountered, and the outcomes achieved in creating a competitive ASR system under these constraints.
+In this project, we developed an end-to-end ASR model specifically tailored for Arabic, training it from scratch. The model was trained for nearly 20 days using a custom dataset comprising `50000` recorded audio samples. Despite the challenges posed by the limited and noisy data, our objective was to achieve high accuracy in transcribing Arabic speech. This project documents the development process, challenges encountered, and the outcomes achieved in creating a competitive ASR system under these constraints.
 
 ## 📑 Table of Contents
 - [🧠 Model Structure](#-model-structure)
