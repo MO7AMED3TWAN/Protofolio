@@ -43,6 +43,6 @@ I am committed to delivering high-quality work and continuous improvement:
 
 ## 🔗 Connect With Me
 
-For collaboration or inquiries, connect with me on [LinkedIn](https://www.linkedin.com/in/mohamed-elsayed-7aaa81223) or explore my work on [GitHub](https://github.com/MO7AMED3TWAN).
+For collaboration or inquiries, connect with me on [LinkedIn](https://www.linkedin.com/in/mo7amed3twan) or explore my work on [GitHub](https://github.com/MO7AMED3TWAN).
 
 Feel free to explore my projects in this repository to see how I apply these skills in real-world scenarios!
