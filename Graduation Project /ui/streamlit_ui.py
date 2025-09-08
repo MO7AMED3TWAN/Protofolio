@@ -23,7 +23,7 @@ except ImportError as e:
 
 # Page configuration
 st.set_page_config(
-    page_title="📚 Speak with Your Book",
+    page_title="Speak with Your Book",
     page_icon="📖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -82,7 +82,7 @@ if "rag_chain" not in st.session_state:
 def load_rag_system():
     """Load the RAG system components"""
     try:
-        with st.spinner("🤖 Loading fine-tuned model..."):
+        with st.spinner("Loading fine-tuned model..."):
             # Load model and tokenizer
             if os.path.exists(config.MODEL_PATH):
                 tokenizer = AutoTokenizer.from_pretrained(config.MODEL_PATH)
@@ -128,12 +128,12 @@ def load_rag_system():
                 
                 # Test database
                 doc_count = vectorstore._collection.count()
-                st.success(f"📚 Database loaded: {doc_count} documents")
+                st.success(f"Database loaded: {doc_count} documents")
             else:
                 st.error("Vector database not found!")
                 return None, None, 0
         
-        with st.spinner("🔗 Setting up RAG chain..."):
+        with st.spinner("Setting up RAG chain..."):
             # Create RAG chain
             prompt_template = """
             You are an intelligent book assistant. Use the following context from the book to answer the question accurately and comprehensively.
@@ -172,32 +172,32 @@ def load_rag_system():
         return None, None, 0
 
 # Main app header
-st.markdown('<h1 class="main-header">📚 Speak with Your Book</h1>', unsafe_allow_html=True)
-st.markdown("### 🤖 AI-Powered Book Conversations using RAG")
+st.markdown('<h1 class="main-header">Speak with Your Book</h1>', unsafe_allow_html=True)
+st.markdown("### AI-Powered Book Conversations using RAG")
 
 # Sidebar
 with st.sidebar:
-    st.header("📊 System Status")
+    st.header("System Status")
     
     # Load RAG system
     if not st.session_state.rag_system_loaded:
-        if st.button("🚀 Initialize RAG System", type="primary"):
+        if st.button("Initialize RAG System", type="primary"):
             rag_chain, vectorstore, doc_count = load_rag_system()
             if rag_chain:
                 st.session_state.rag_chain = rag_chain
                 st.session_state.vectorstore = vectorstore
                 st.session_state.doc_count = doc_count
                 st.session_state.rag_system_loaded = True
-                st.success("✅ System loaded successfully!")
+                st.success("System loaded successfully!")
                 st.rerun()
             else:
-                st.error("❌ Failed to load system")
+                st.error("Failed to load system")
     else:
-        st.success("✅ RAG System Ready")
-        st.info(f"📚 Documents: {st.session_state.doc_count}")
-        st.info(f"🖥️ Device: {config.DEVICE}")
+        st.success("RAG System Ready")
+        st.info(f"Documents: {st.session_state.doc_count}")
+        st.info(f"Device: {config.DEVICE}")
         
-        if st.button("🔄 Reload System"):
+        if st.button("Reload System"):
             st.session_state.rag_system_loaded = False
             st.session_state.rag_chain = None
             st.rerun()
@@ -205,7 +205,7 @@ with st.sidebar:
     st.divider()
     
     # System info
-    st.subheader("⚙️ Configuration")
+    st.subheader("Configuration")
     st.text(f"Model: Fine-tuned Qwen")
     st.text(f"Retrieval: {config.RETRIEVAL_K} chunks")
     st.text(f"Embedding: MiniLM-L6")
@@ -213,13 +213,13 @@ with st.sidebar:
     st.divider()
     
     # Chat controls
-    st.subheader("💬 Chat Controls")
-    if st.button("🗑️ Clear Chat"):
+    st.subheader("Chat Controls")
+    if st.button("Clear Chat"):
         st.session_state.messages = []
         st.rerun()
     
     # Example questions
-    st.subheader("💡 Example Questions")
+    st.subheader("Example Questions")
     example_questions = [
         "What is the main theme?",
         "Who are the main characters?", 
@@ -229,29 +229,29 @@ with st.sidebar:
     ]
     
     for question in example_questions:
-        if st.button(f"❓ {question}", key=f"example_{question}"):
+        if st.button(f"{question}", key=f"example_{question}"):
             if st.session_state.rag_system_loaded:
                 st.session_state.messages.append({"role": "user", "content": question})
                 st.rerun()
 
 # Main chat interface
 if not st.session_state.rag_system_loaded:
-    st.warning("⚠️ Please initialize the RAG system using the sidebar button")
+    st.warning("Please initialize the RAG system using the sidebar button")
     st.info("📋 Make sure you have:")
     st.markdown("""
-    - ✅ Fine-tuned model in `development/outputs/fine_tuned_model/`
-    - ✅ Vector database in `development/outputs/vector_database/`
-    - ✅ All dependencies installed (`pip install -r requirements.txt`)
+    - Fine-tuned model in `development/outputs/fine_tuned_model/`
+    - Vector database in `development/outputs/vector_database/`
+    - All dependencies installed (`pip install -r requirements.txt`)
     """)
 else:
     # Display chat messages
     for message in st.session_state.messages:
         if message["role"] == "user":
-            st.markdown(f'<div class="chat-message user-message">🤔 <b>You:</b> {message["content"]}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="chat-message user-message"> <b>You:</b> {message["content"]}</div>', unsafe_allow_html=True)
         else:
-            st.markdown(f'<div class="chat-message bot-message">🤖 <b>Assistant:</b> {message["content"]}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="chat-message bot-message"> <b>Assistant:</b> {message["content"]}</div>', unsafe_allow_html=True)
             if "sources" in message:
-                st.markdown(f'<div class="source-info">📚 Sources used: {message["sources"]}</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="source-info">Sources used: {message["sources"]}</div>', unsafe_allow_html=True)
 
     # Chat input
     if prompt := st.chat_input("Ask me anything about your book..."):
@@ -259,18 +259,18 @@ else:
         st.session_state.messages.append({"role": "user", "content": prompt})
         
         # Display user message
-        st.markdown(f'<div class="chat-message user-message">🤔 <b>You:</b> {prompt}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="chat-message user-message"> <b>You:</b> {prompt}</div>', unsafe_allow_html=True)
         
         # Get AI response
-        with st.spinner("🤖 Thinking..."):
+        with st.spinner("Thinking..."):
             try:
                 response = st.session_state.rag_chain({"query": prompt})
                 answer = response["result"]
                 sources = response["source_documents"]
                 
                 # Display AI response
-                st.markdown(f'<div class="chat-message bot-message">🤖 <b>Assistant:</b> {answer}</div>', unsafe_allow_html=True)
-                st.markdown(f'<div class="source-info">📚 Sources used: {len(sources)} chunks</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="chat-message bot-message"> <b>Assistant:</b> {answer}</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="source-info"> Sources used: {len(sources)} chunks</div>', unsafe_allow_html=True)
                 
                 # Add to messages
                 st.session_state.messages.append({
@@ -289,7 +289,7 @@ else:
                         st.divider()
                 
             except Exception as e:
-                error_msg = f"❌ Error: {str(e)}"
+                error_msg = f"Error: {str(e)}"
                 st.error(error_msg)
                 st.session_state.messages.append({"role": "assistant", "content": error_msg})
         
@@ -299,7 +299,7 @@ else:
 st.divider()
 st.markdown("""
 <div style='text-align: center; color: #666; font-size: 0.9rem;'>
-    🚀 Built with LangChain, ChromaDB & Fine-tuned Qwen<br>
-    📖 Speak with Your Book - RAG System v1.0
+    Built with LangChain, ChromaDB & Fine-tuned Qwen<br>
+    Speak with Your Book - RAG System v1.0 Mohamed Atwan
 </div>
 """, unsafe_allow_html=True)
