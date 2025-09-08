@@ -18,7 +18,7 @@ An intelligent chatbot system that enables users to have meaningful conversation
 ## 🏗️ System Architecture
 
 ### Workflow Overview
-
+   ## Part (1)
 1. **Document Preprocessing**
    - Extract and clean text from uploaded documents
    - Segment content into meaningful units (chapters, paragraphs)
@@ -28,6 +28,7 @@ An intelligent chatbot system that enables users to have meaningful conversation
    - Store embeddings in ChromaDB for fast semantic search
    - Index content for efficient retrieval
 
+   ## Part (2)
 3. **Query Processing**
    - Convert user questions into vector embeddings
    - Retrieve most relevant document segments
@@ -37,6 +38,8 @@ An intelligent chatbot system that enables users to have meaningful conversation
    - Generate contextual responses using retrieved information
    - Ensure accuracy and coherence based on source material
 
+
+## Workflow Digram
 ```
 [Document Upload] → [Preprocessing] → [Embedding Generation] → [ChromaDB Storage]
                                                                        ↓
@@ -47,24 +50,22 @@ An intelligent chatbot system that enables users to have meaningful conversation
 
 ```
 speak-with-your-book/
-├── notebooks/
-│   ├── 01_qwen_fine_tuning.ipynb          # Fine-tune Qwen LLM
-│   ├── 02_data_preparation_rag.ipynb      # RAG data prep & DB creation
-│   └── 03_rag_system.ipynb                # Main RAG system implementation
-├── data/
-│   ├── raw/                               # Original documents
-│   ├── processed/                         # Cleaned and segmented data
-│   └── embeddings/                        # Generated vector embeddings
-├── models/
-│   └── fine_tuned_qwen/                   # Fine-tuned model artifacts
-├── database/
-│   └── chroma_db/                         # ChromaDB vector database
-├── ui/
-│   └── streamlit_app.py                   # User interface (planned)
-├── requirements.txt                        # Python dependencies
-└── README.md                              # This documentation
+├── development/                          # Development Folder
+│   ├── 01_qwen_fine_tuning.ipynb         # Fine-tune Qwen LLM
+│   ├── 02_data_preparation_rag.ipynb     # RAG data prep & DB creation
+│   ├── inputs/
+│       └── data/
+│           ├── raw/                      # Original documents
+│           └──processed/                # Cleaned and segmented data
+│   └── outputs/
+│       ├── fine_tuned_model/
+│       └── vector_database/             # Generated vector embeddings
+├── 03_rag_system.ipynb                   # Main RAG system implementation
+├── ui/streamlit_app.py                   # User interface
+├── requirements.txt                      # Python dependencies 
+│   
+└── README.md                     
 ```
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -159,14 +160,6 @@ streamlit run ui/streamlit_app.py
 - **Interface**: Jupyter Notebooks, Streamlit (planned)
 - **Deployment**: Local development, cloud deployment ready
 
-## 📊 Performance Metrics
-
-The system tracks several key metrics:
-- **Retrieval Accuracy**: Relevance of retrieved document segments
-- **Response Quality**: Coherence and factual accuracy of generated answers
-- **Latency**: Query processing and response generation time
-- **Context Utilization**: How effectively the system uses retrieved information
-
 ## 🔮 Future Enhancements
 
 ### Planned Features
@@ -204,42 +197,20 @@ If you encounter any issues or have questions:
 - Check the documentation in the notebooks
 - Review the troubleshooting section below
 
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Memory Issues during Fine-tuning**
-- Reduce batch size in training configuration
-- Use gradient accumulation steps
-- Consider using smaller model variants
-
-**ChromaDB Connection Problems**
-- Ensure ChromaDB service is running
-- Check database path permissions
-- Verify Python environment compatibility
-
-**Slow Query Processing**
-- Optimize embedding model selection
-- Implement result caching
-- Consider GPU acceleration for embeddings
-
 ## 📈 Results and Examples
 
 ### Sample Interactions
 
-**User**: "What is the main theme of chapter 3?"
-**System**: *Retrieves relevant segments from chapter 3 and provides a comprehensive thematic analysis based on the book's content*
+**User**: "ما الشكل الديموجرافي للمجتمع المصري"
 
-**User**: "How does the author's argument in the introduction relate to the conclusion?"
-**System**: *Cross-references introduction and conclusion sections to explain the argumentative structure and development*
+**System**:  العدد والكثافة: أكثر من 106 مليون نسمة (الأكبر عربيًا)، يعيش 95% منهم على 4.5% فقط من المساحة (وادي النيل والدلتا)، مما يخلق كثافة سكانية عالية جدًا.
 
-## 🙏 Acknowledgments
+مجتمع فتي: مجتمع شاب بشكل لافت، حيث أكثر من 60% من السكان تحت سن 30 عامًا. هذه سمة تمثل طاقة بشرية هائلة إذا تم استثمارها، ولكنها تشكل ضغطًا كبيرًا على الخدمات وسوق العمل.
 
-- Qwen team for the excellent base language model
-- ChromaDB team for the efficient vector database
-- Open-source community for various tools and libraries
-- Contributors and testers who helped improve the system
+معدل النمو: مرتفع (حوالي 1.7% سنويًا)، مما يعني زيادة سريعة ومستمرة في عدد السكان تلتهم مكاسب التنمية.
 
----
+التوزيع الجغرافي: تركيز شديد حول النيل واتجاه متزايد للعمرنة (الانتقال إلى المدن)، حيث يعيش نحو 43% من السكان في مناطق حضرية.
 
-**Happy Reading and Chatting! 📚✨**
+التكوين الثقافي: متجانس إلى حد كبير، حيث يشكل المسلمون الغالبية العظمى (90-95%)، ويشكل الأقباط الأرثوذكس معظم النسبة المتبقية.
+
+التحدي الرئيسي: تحويل الطاقة البشرية (الشباب) من عبء إلى عائد ديموغرافي من خلال توفير التعليم الجيد، الرعاية الصحية، وفرص العمل المنتج.
