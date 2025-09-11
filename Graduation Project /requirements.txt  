@@ -1,32 +1,32 @@
 # Core dependencies for RAG System
-torch>=2.0.0
-transformers>=4.35.0
-tokenizers>=0.15.0
+torch
+transformers
+tokenizers
 
 # LangChain ecosystem
-langchain>=0.0.350
-langchain-community>=0.0.10
+langchain
+langchain-community
 
 # Vector database
-chromadb>=0.4.15
-sentence-transformers>=2.2.2
+chromadb
+sentence-transformers
 
 # Embeddings and NLP
-huggingface-hub>=0.19.0
-datasets>=2.14.0
+huggingface-hub
+datasets
 
 # Data processing
-pandas>=2.0.0
-numpy>=1.24.0
-scipy>=1.10.0
+pandas
+numpy
+scipy
 
 # JSON and file handling
-jsonschema>=4.17.0
+jsonschema
 
 # Optional UI components
-streamlit>=1.28.0
-gradio>=4.0.0
+streamlit
+gradio
 
 # GPU acceleration (optional)
-accelerate>=0.24.0
-bitsandbytes>=0.41.0
+accelerate
+bitsandbytes
