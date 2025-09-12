@@ -55,11 +55,13 @@ speak-with-your-book/
 │   ├── 02_data_preparation_rag.ipynb     # RAG data prep & DB creation
 │   ├── inputs/
 │       └── data/
-│           ├── raw/                      # Original documents
-│           └──processed/                # Cleaned and segmented data
+│           ├── pdf/                      # Original pdf documents
+│           └── processed/                # Cleaned and segmented data
 │   └── outputs/
-│       ├── fine_tuned_model/
-│       └── vector_database/             # Generated vector embeddings
+│         └── data/
+│               ├── pdf/                      # Original pdf documents
+│               └── processed/                # Cleaned and segmented data
+│         └── vector_database/             # Generated vector embeddings
 ├── 03_rag_system.ipynb                   # Main RAG system implementation
 ├── ui/streamlit_app.py                   # User interface
 ├── requirements.txt                      # Python dependencies 
