@@ -56,7 +56,7 @@ speak-with-your-book/
 │   ├── inputs/
 │       └── data/
 │           ├── pdf/                      # Original pdf documents
-│           └── otherwise/                # json or other else ...
+│           └── otherwise/                # JSON and other supported document formats
 │   └── outputs/
 │         └── data/
 │               ├── processed/            # Cleaned and segmented data
