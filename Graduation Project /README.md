@@ -56,12 +56,12 @@ speak-with-your-book/
 │   ├── inputs/
 │       └── data/
 │           ├── pdf/                      # Original pdf documents
-│           └── processed/                # Cleaned and segmented data
+│           └── otherwise/                # json or other else ...
 │   └── outputs/
 │         └── data/
-│               ├── pdf/                      # Original pdf documents
-│               └── processed/                # Cleaned and segmented data
-│         └── vector_database/             # Generated vector embeddings
+│               ├── processed/            # Cleaned and segmented data
+│               └── vector_database/      # Generated vector embeddings
+│         └── Model/                      # Fine-tuned Model
 ├── 03_rag_system.ipynb                   # Main RAG system implementation
 ├── ui/streamlit_app.py                   # User interface
 ├── requirements.txt                      # Python dependencies 
